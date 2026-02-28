@@ -19,6 +19,9 @@ class: CS3300
     font-weight: 400;
     font-style: normal;
 }
+.homepage b {
+    color:rgb(252, 234, 143)
+}
 /*Page Headers*/
 .header-container {
     display: flex;
@@ -157,6 +160,11 @@ table, th, td{
 }
 .game label {
     font-size: 25px;
+}
+
+.no-games {
+    color: black;
+    margin-top: 20px;
 }
 /*END Games List*/
 

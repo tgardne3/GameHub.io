@@ -7,12 +7,12 @@
 //game searching script
 
 let all_games = [
-    {"id": 1, "game_title" : "Hangman", "game_path" : "./games/hangman/hangman.html", "image_path" : "test_game_image.jpeg"},
-    {"id": 2, "game_title" : "Snake", "game_path" : "./games/snake/snake.html", "image_path" : "test_game_image.jpeg"},
-    {"id": 3, "game_title" : "Type Sprint", "game_path" : "./games/type_sprint/type_sprint.html", "image_path" : "test_game_image.jpeg"},
-    {"id": 4, "game_title" : "Test Game", "game_path" : "./games/game_4/test_game-4.html", "image_path" : "test_game_image.jpeg"},
-    {"id": 5, "game_title" : "Test Game", "game_path" : "./games/game_4/test_game-4.html", "image_path" : "test_game_image.jpeg"},
-    {"id": 6, "game_title" : "Test Game", "game_path" : "./games/game_4/test_game-4.html", "image_path" : "test_game_image.jpeg"}
+    {"id": 1, "game_title" : "Hangman", "game_path" : "./games/hangman/hangman.html", "image_path" : "hangman.webp"},
+    {"id": 2, "game_title" : "Snake", "game_path" : "./games/snake/snake.html", "image_path" : "snake.png"},
+    {"id": 3, "game_title" : "Type Sprint", "game_path" : "./games/type_sprint/type_sprint.html", "image_path" : "typesprint.png"},
+    {"id": 4, "game_title" : "Test Game", "game_path" : "./games/test_game/test_game.html", "image_path" : "test_game_image.jpeg"},
+    {"id": 5, "game_title" : "Test Game", "game_path" : "./games/test_game/test_game.html", "image_path" : "test_game_image.jpeg"},
+    {"id": 6, "game_title" : "Test Game", "game_path" : "./games/test_game/test_game.html", "image_path" : "test_game_image.jpeg"}
 ];
 
 display_games(all_games);
@@ -26,7 +26,7 @@ function display_games(games) {
 
     //if no games found: show...
     if (games.length === 0) {
-        container.innerHTML = '<div class="no-games">Game not found</div>';
+        container.innerHTML = '<div class="no-games"><h2>Game not found</h2></div>';
         return;
     }
     games.forEach(game => {
@@ -50,7 +50,7 @@ function display_games(games) {
        container.style.height = `${height}px`;
        container.style.width = `${width}px`;
     }
-    else if ((games.length % 2) === 1) {
+    else if (games.length === 1) {
         height = 317;
         width = 875/2; 
         
@@ -65,10 +65,6 @@ function display_games(games) {
         container.style.height = `${height}px`;
         container.style.width = `${width}px`;
     }
-
-
-
-
 }
 
 
