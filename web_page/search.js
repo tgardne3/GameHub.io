@@ -7,12 +7,12 @@
 //game searching script
 
 let all_games = [
-    {"id": 1, "game_title" : "Hangman", "game_path" : "/hangman/hangman.html", "image_path" : "test_game_image.jpeg"},
-    {"id": 2, "game_title" : "Snake", "game_path" : "/snake/snake.html", "image_path" : "test_game_image.jpeg"},
-    {"id": 3, "game_title" : "Type Sprint", "game_path" : "/type_sprint/type_sprint.html", "image_path" : "test_game_image.jpeg"},
-    {"id": 4, "game_title" : "Test Game", "game_path" : "/game_4/test_game-4.html", "image_path" : "test_game_image.jpeg"},
-    {"id": 5, "game_title" : "Test Game", "game_path" : "/game_4/test_game-4.html", "image_path" : "test_game_image.jpeg"},
-    {"id": 6, "game_title" : "Test Game", "game_path" : "/game_4/test_game-4.html", "image_path" : "test_game_image.jpeg"}
+    {"id": 1, "game_title" : "Hangman", "game_path" : "./games/hangman/hangman.html", "image_path" : "test_game_image.jpeg"},
+    {"id": 2, "game_title" : "Snake", "game_path" : "./games/snake/snake.html", "image_path" : "test_game_image.jpeg"},
+    {"id": 3, "game_title" : "Type Sprint", "game_path" : "./games/type_sprint/type_sprint.html", "image_path" : "test_game_image.jpeg"},
+    {"id": 4, "game_title" : "Test Game", "game_path" : "./games/game_4/test_game-4.html", "image_path" : "test_game_image.jpeg"},
+    {"id": 5, "game_title" : "Test Game", "game_path" : "./games/game_4/test_game-4.html", "image_path" : "test_game_image.jpeg"},
+    {"id": 6, "game_title" : "Test Game", "game_path" : "./games/game_4/test_game-4.html", "image_path" : "test_game_image.jpeg"}
 ];
 
 display_games(all_games);
@@ -36,7 +36,7 @@ function display_games(games) {
         card.id = game.id;
         card.innerHTML = `
         <label for="hangman">${game.game_title}</label>
-        <a href="./games/${game.game_path}">
+        <a href="${game.game_path}">
             <img src="./images/${game.image_path}" alt="...game image here..." />
         </a>
         `;
