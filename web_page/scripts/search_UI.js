@@ -73,15 +73,27 @@ function display_games(games) {
 
 
 function search_games(event) {
+
     //pull search query from user
     const search_query = event.target.value.toLowerCase();
 
     //filter games via search query
     const filtered_games = all_games.filter(game => game.game_title.toLowerCase().includes(search_query));
 
+    //debugging
+    console.log(event);
+
     //display filtered search
     display_games(filtered_games);
-}
+
+    //if enter when only one item
+    document.getElementById('game_search').addEventListener('keydown', function(key) {
+        if (key.key === 'Enter' && filtered_games.length === 1) {
+            window.location.href = filtered_games[0].game_path;
+        }
+    });
+}//search_games
 
 //adding event listener to the search input
 document.getElementById('game_search').addEventListener('input', search_games);
+
