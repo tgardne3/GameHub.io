@@ -1,5 +1,11 @@
 const { jsx } = require("react/jsx-runtime");
 
+// Decalre Variables
+let word;
+let lives;
+let guessed_letters;
+let display;
+
 // List of possible words
 let words = [
   "a","ability","able","about","above","accept","according","account","across",
@@ -125,30 +131,35 @@ function handleKeyPress(e) {
     }
 }
 
+// Function to process a new guess
 function new_guess(letter) {
-    if (word.includes(letter)) {
+    if (guessed_letters.includes(letter)) { // Do nothing if letter is already guessed
+        return;
+    }
+    if (word.includes(letter)) {  // Correct guess
         for (let i = 0; i < word.length; i++) {
             if (word[i] === letter) {
                 display[i] = letter;
             }
         } 
-    } else {
+    } else {    // Wrong guess
         lives--;
         display_hangman(lives);
     }
-    if (lives === 0) {
+    if (lives === 0) {  // Game over, you lose
         alert("Game Over!");
         document.removeEventListener("keydown", handleKeyPress);
-    } else if (!display.includes("_")) {
+    } else if (!display.includes("_")) {   // Game over, you win
         alert("You Win!");
         document.removeEventListener("keydown", handleKeyPress);
-    } else {
+    } else {   // go to next guess
         guessed_letters.push(letter);
         update_display();
         return;
     }
 }
 
+// function Display hangman
 function display_hangman(num_lives) {
     switch (num_lives) {
         case 5:
@@ -175,6 +186,7 @@ function display_hangman(num_lives) {
     return;
 }
 
+// Function to update the display
 function update_display() {
     document.getElementById("wordDisplay").textContent = display.join("  ");
 
@@ -184,13 +196,14 @@ function update_display() {
 
 function run_hangman() {
 
-    // assign and declare variables
-    let word = words[(Math.floor(Math.random() * 1000))]; // pick a random word
-    let lives = 6;
-    let guessed_letters = [];   // empty list to keep track of guessed letters
-    let display = Array(word.length).fill("_"); // display the current state of selected word
+    // assign variables
+    word = words[Math.floor(Math.random() * words.length)]; // pick a random word   
+    word = word.toLowerCase();  // make word lowercase
+    lives = 6;
+    guessed_letters = [];   // empty list to keep track of guessed letters
+    display = Array(word.length).fill("_"); // display the current state of selected word
     update_display();
-    display_hangman();
+    display_hangman(lives);
 
-    document.addEventListener("keydown". handleKeyPress);
+    document.addEventListener("keydown", handleKeyPress);
 }
