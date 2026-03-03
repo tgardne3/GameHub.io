@@ -1,6 +1,7 @@
 // Get canvas drawing tool
 const canvas = document.getElementById("hangman_canvas");
 const ctx = canvas.getContext("2d");
+ctx.strokeStyle = "white";
 
 // function to draw gallows
 function draw_gallows() {

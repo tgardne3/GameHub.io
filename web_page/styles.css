@@ -270,8 +270,13 @@ table, th, td{
 /*Games*/
 
 /*Hangman*/
-.hangman_canvas canvas {
+#hangman_canvas {
     border: 2px solid #FFED29;
-    background-color: white;
+    background-color: black;
+}
 
+#word_display,
+#guessed_letters {
+    color: white;
+    font-size: 24px;
 }
