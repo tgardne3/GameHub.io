@@ -275,8 +275,8 @@ table, th, td{
     background-color: black;
 }
 
-#word_display,
-#guessed_letters {
+#wordDisplay,
+#guessedLetters {
     color: white;
     font-size: 24px;
 }
