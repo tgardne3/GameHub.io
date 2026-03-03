@@ -1,5 +1,3 @@
-const { jsx } = require("react/jsx-runtime");
-
 // Decalre Variables
 let word;
 let lives;
