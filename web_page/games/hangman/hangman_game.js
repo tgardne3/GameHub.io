@@ -145,10 +145,10 @@ function new_guess(letter) {
         display_hangman(lives);
     }
     if (lives === 0) {  // Game over, you lose
-        alert("Game Over!");
+        alert("Game Over!\nThe word was: " + word);
         document.removeEventListener("keydown", handleKeyPress);
     } else if (!display.includes("_")) {   // Game over, you win
-        alert("You Win!");
+        alert("You Win!\n You guessed the word: " + word);
         document.removeEventListener("keydown", handleKeyPress);
     } else {   // go to next guess
         guessed_letters.push(letter);
