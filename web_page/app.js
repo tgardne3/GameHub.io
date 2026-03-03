@@ -20,6 +20,7 @@ function sign_up() {
     }
     else {
         console.log("passwords don't match");
+        alert("Passwords DON'T match!")
     }
 }//sign_in
 
