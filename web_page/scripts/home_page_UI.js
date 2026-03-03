@@ -4,7 +4,7 @@
 //game searching script
 
 let all_games = [
-    {"id": 1, "game_title" : "Hangman", "game_path" : "./games/hangman/hangman.html", "image_path" : "hangman.webp"},
+    {"id": 1, "game_title" : "Hangman", "game_path" : "./games/hangman/hangman.html", "image_path" : "hangman.png"},
     {"id": 2, "game_title" : "Snake Game", "game_path" : "./games/snake/snake.html", "image_path" : "snake.png"},
     {"id": 3, "game_title" : "Type Sprint", "game_path" : "./games/type_sprint/type_sprint.html", "image_path" : "typesprint.png"},
     {"id": 4, "game_title" : "Light Racer", "game_path" : "./games/test_game/test_game.html", "image_path" : "tron.png"},
