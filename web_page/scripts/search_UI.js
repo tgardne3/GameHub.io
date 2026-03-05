@@ -37,6 +37,7 @@ function display_games(games) {
         const card = document.createElement('div');
         card.className = 'game';
         card.id = game.id;
+
         //html outline for each card
         card.innerHTML = `
         <label for="hangman">${game.game_title}</label>

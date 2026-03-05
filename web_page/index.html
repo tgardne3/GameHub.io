@@ -45,36 +45,18 @@ class: CS3300
                 <label>Leaderboard</label>
                 <a href="./htmls/leaderboard.html">
                     <table>
-                     <thread>
+                     <thead>
                         <tr>
                             <th>Game</th>
                             <th>Score</th>
                             <th>Player</th>
                         </tr>
-                     </thread>
-                        <tbody>
-                             <tr>
-                                <td>HangMan</td>
-                                <td>100</td>
-                                <td>David</td>
-                             </tr>
-                             <tr>
-                                <td>Snake</td>
-                                <td>100</td>
-                                <td>Brandon</td>
-                             </tr>
-                             <tr>
-                                <td>Type Sprint</td>
-                                <td>100</td>
-                                <td>Azam</td>
-                            </tr>
-                        </tbody>
+                     </thead>
+                        <tbody id="leaderboard-body"></tbody>
                     </table>
                 </a>
             </div>
-            <script src="leaderboard.js"></script>
         </div>
-        <script src="./scripts/leaderboard.js"></script>
         <!--Center Section-->
         <div class="center-header">
             <!--temporary title of webpage (website header)-->
@@ -100,13 +82,14 @@ class: CS3300
 
         <div class="list-container" id="list-container"></div>
 
-            <script src="./scripts/search_UI.js"></script>
     </div>
     <div class="about">
         <h2>About the Developers:</h2>
         <p>This website was designed entirely by the team of developers - Azam Jaffer, Brandon Sith, David Zarkovachi
             and Trey Gardner</p>
     </div>
+            <script src="./scripts/leaderboard.js"></script>
+            <script src="./scripts/search_UI.js"></script>
 </body>
 
 </html>
