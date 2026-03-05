@@ -109,12 +109,20 @@ table, th, td{
     text-align: center;
     background-color: rgb(252, 234, 143);
     width: 800px;
+    border-radius: 15px;
 }
 
 .full-leaderboard-containers th {
     font-size: 35px;
 }
 
+.full-leaderboard-containers table {
+    margin: 20px;
+}
+
+.rank-col {
+    width: 70px;
+}
 /*Games List*/
 
 /*List Container*/

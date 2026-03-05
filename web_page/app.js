@@ -17,6 +17,9 @@ function sign_up() {
         //redirecting to success page
         console.log("User data collected: ", {username, password});//print debugging
         window.location.href = "successful-sign-up.html";
+
+        //send to firebase
+
     }
     else {
         console.log("passwords don't match");

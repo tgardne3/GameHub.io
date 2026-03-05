@@ -129,7 +129,7 @@ function display_full_leaderboard(full_data) {
 
         //html for table row
         score_card.innerHTML = `
-            <td>Rank: ${data.rank}</td>
+            <td class="rank-col">Rank: ${data.rank}</td>
             <td>${data.score}</td>
             <td>${data.player}</td>
         `;
