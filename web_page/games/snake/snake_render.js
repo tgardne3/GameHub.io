@@ -28,5 +28,7 @@ document.addEventListener("keydown", (event) => {
 
 // Function for game loop
 function game_tick() {
-    return;
+    move_snake(current_direction);
+    detect_collision(current_direction);
+    draw_game();
 }

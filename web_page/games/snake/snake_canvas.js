@@ -23,7 +23,7 @@ resize_canvas();
 window.addEventListener("resize", resize_canvas);
 
 // Function to draw the boundries
-function draw_boundries(walls) {
+function draw_boundries() {
     ctx.fillStyle = "green";
 
     for (let x = 0; x < 12; x++) {
@@ -77,4 +77,13 @@ function draw_grid() {
 // Function to draw cells
 function draw_cell(x, y) {
     ctx.fillRect(x * cell_size, y * cell_size, cell_size, cell_size);
+}
+
+// Function to draw the game
+function draw_game() {
+    draw_grid();
+    draw_boundries();
+    draw_snake(snake);
+    draw_fruit(spawn_fruit());
+    return;
 }
