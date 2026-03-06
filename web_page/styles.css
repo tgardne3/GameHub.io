@@ -315,3 +315,11 @@ table, th, td{
     color: white;
     font-size: 24px;
 }
+
+/* Snake */
+.snake_score {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+    color: white;
+}

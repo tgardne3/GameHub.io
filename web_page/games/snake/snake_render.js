@@ -42,6 +42,8 @@ function game_tick() {
 
     if (is_game_over()) {
         clearInterval(game_loop);
+        alert("You lose!\nYour score is: " + snake.length)
+        
         return;
     }
 
@@ -50,6 +52,10 @@ function game_tick() {
 
 // Function to run the game
 function run_snake() {
+
+    clearInterval(game_loop);
+    reset_game();
+
     draw_game();
     game_loop = setInterval(game_tick, 200);
 }

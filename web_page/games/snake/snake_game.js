@@ -9,6 +9,8 @@ let snake = [
     {x: 3, y: 6}
 ];
 
+let score = 3;
+
 let boundaries = new Set([
     "0,0", "1,0", "2,0", "3,0", "4,0", "5,0", "6,0", "7,0", "8,0", "9,0", "10,0", "11,0", // top wall
     "0,1", "0,2", "0,3", "0,4", "0,5", "0,6", "0,7", "0,8", "0,9", "0,10",  // left wall
@@ -73,6 +75,9 @@ function grow_snake(direction) {
     snake_set.add(new_set_key);
 
     fruit = spawn_fruit(snake_set);
+
+    score++;
+    update_score_display();
 }
 
 // Function to detect collisions
@@ -101,11 +106,41 @@ function spawn_fruit(snake_set) {
     let rand_set_key = `${rand_x},${rand_y}`;
 
     while (snake_set.has(rand_set_key) || boundaries.has(rand_set_key)) {
-        rand_x = Math.floor(Math.random() * 10);
-        rand_y = Math.floor(Math.random() * 10);
+        rand_x = Math.floor((Math.random() * 10) + 1);
+        rand_y = Math.floor((Math.random() * 10) + 1);
 
         rand_set_key = `${rand_x},${rand_y}`;
     }
 
     return {x: rand_x, y: rand_y};
+}
+
+// Function to reset the game
+function reset_game() {
+    end_game = false;
+
+    fruit = {x: 8, y: 6};
+
+    snake = [
+    {x: 5, y: 6},
+    {x: 4, y: 6},
+    {x: 3, y: 6}
+    ];
+
+    snake_set = new Set([
+    "5,6",
+    "4,6",
+    "3,6",
+    ])
+    
+    current_direction = "s";
+
+    score = 3;
+    update_score_display();
+}
+
+// Function to update score display
+function update_score_display() {
+    const score_element = document.getElementById("snake_score");
+    score_element.textContent = score;
 }
