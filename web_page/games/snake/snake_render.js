@@ -1,5 +1,5 @@
 // Declare variables
-let current_direction = "r";
+let current_direction = "s";
 let game_loop;
 let next_square;
 

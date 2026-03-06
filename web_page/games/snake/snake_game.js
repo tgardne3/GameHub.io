@@ -43,18 +43,22 @@ function next_head(direction) {
 }
 // Function to move the snake
 function move_snake(direction) {
-    const new_head = next_head(direction);
-    const new_set_key = `${new_head.x},${new_head.y}`;
+    if (direction != "s") {
+        const new_head = next_head(direction);
+        const new_set_key = `${new_head.x},${new_head.y}`;
 
-    detect_collision(new_set_key);
+        detect_collision(new_set_key);
 
-    // add new head
-    snake.unshift(new_head);
-    snake_set.add(new_set_key);
+        // add new head
+        snake.unshift(new_head);
+        snake_set.add(new_set_key);
 
-    // remove tail
-    const tail = snake.pop();
-    snake_set.delete(`${tail.x},${tail.y}`);
+        // remove tail
+        const tail = snake.pop();
+        snake_set.delete(`${tail.x},${tail.y}`);
+    } else {
+        return;
+    }
 }
 
 // Function to grow the snake
