@@ -40,11 +40,52 @@ function draw_boundaries() {
 }
 
 // Function to draw the snake
-function draw_snake(snake) {
-    for (let segment of snake) {
+function draw_snake(snake, direction) {
+    for (let i = 1; i < snake.length; i++) {
         ctx.fillStyle = "blue";
-        ctx.fillRect(segment.x * cell_size, segment.y * cell_size, cell_size, cell_size);
+        ctx.fillRect(snake[i].x * cell_size, snake[i].y * cell_size, cell_size, cell_size);
     }
+
+    draw_head(snake[0], direction);
+}
+
+// function to draw the head
+function draw_head(head, direction) {
+    
+    const x = head.x * cell_size;
+    const y = head.y * cell_size;
+    const center = cell_size / 2;
+
+    ctx.fillStyle = "darkblue";
+
+    ctx.beginPath();
+
+    if (direction === "u") {
+        ctx.moveTo(x + center, y);                 // tip
+        ctx.lineTo(x, y + cell_size);
+        ctx.lineTo(x + cell_size, y + cell_size);
+    }
+
+    if (direction === "d") {
+        ctx.moveTo(x + center, y + cell_size);
+        ctx.lineTo(x, y);
+        ctx.lineTo(x + cell_size, y);
+    }
+
+    if (direction === "l") {
+        ctx.moveTo(x, y + center);
+        ctx.lineTo(x + cell_size, y);
+        ctx.lineTo(x + cell_size, y + cell_size);
+    }
+
+    if (direction === "r") {
+        ctx.moveTo(x + cell_size, y + center);
+        ctx.lineTo(x, y);
+        ctx.lineTo(x, y + cell_size);
+    }
+
+    ctx.closePath();
+    ctx.fill();
 }
 
 // Function to draw the fruit
@@ -84,7 +125,7 @@ function draw_game() {
     clear_canvas();
     draw_grid();
     draw_boundaries();
-    draw_snake(snake);
+    draw_snake(snake, current_direction);
     draw_fruit(fruit);
     return;
 }
