@@ -16,6 +16,9 @@ document.addEventListener("keydown", (event) => {
 
     const new_direction = arrowKeys[event.key];
     if (!new_direction) return      // ignore all keys other than arrow keys
+
+    const message = document.getElementById("game_message");
+    message.textContent = "";
     
     if (
         (current_direction === "u" && new_direction === "d") ||
@@ -42,6 +45,10 @@ function game_tick() {
 
     if (is_game_over()) {
         clearInterval(game_loop);
+
+        document.getElementById("game_message").textContent =
+        "Game Over! Press Reset to play again";
+
         alert("You lose!\nYour score is: " + snake.length)
         
         return;

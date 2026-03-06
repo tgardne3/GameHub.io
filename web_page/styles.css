@@ -323,3 +323,10 @@ table, th, td{
     margin-top: 10px;
     color: white;
 }
+
+.game-message {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin-top: 10px;
+}
