@@ -92,8 +92,8 @@ function is_game_over() {
 // Function to spawn fruit in random location
 function spawn_fruit(snake_set) {
 
-    let rand_x = Math.floor(Math.random() * 10);
-    let rand_y = Math.floor(Math.random() * 10);
+    let rand_x = Math.floor((Math.random() * 9) + 1);
+    let rand_y = Math.floor((Math.random() * 9) + 1);
     let rand_set_key = `${rand_x},${rand_y}`;
 
     while (snake_set.has(rand_set_key)) {
