@@ -17,9 +17,9 @@ let boundaries = new Set([
 ])
 
 let snake_set = new Set([
-    "5,10",
-    "4,10",
-    "3,10",
+    "5,6",
+    "4,6",
+    "3,6",
 ])
 
 // Function to get the immidate next square
@@ -77,7 +77,7 @@ function detect_collision(head) {
         end_game = true;
         return;
     }
-    if (boundries.has(head)) {
+    if (boundaries.has(head)) {
         end_game = true;
         return;
     }
@@ -100,8 +100,8 @@ function spawn_fruit(snake_set) {
         rand_x = Math.floor(Math.random() * 10);
         rand_y = Math.floor(Math.random() * 10);
 
-        rand_set_key = {x: rand_x, y: rand_y};
+        rand_set_key = `${rand_x},${rand_y}`;
     }
 
-    return rand_set_key;
+    return {x: rand_x, y: rand_y};
 }

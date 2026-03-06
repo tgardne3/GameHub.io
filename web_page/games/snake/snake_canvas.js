@@ -1,5 +1,5 @@
 // initalize canvas
-const canvas = document.getElementById("gameCanvas");
+const canvas = document.getElementById("snake_canvas");
 const ctx = canvas.getContext("2d");
 
 // Declare/define constants and variables

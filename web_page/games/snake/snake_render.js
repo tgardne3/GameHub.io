@@ -39,7 +39,6 @@ function game_tick() {
     } else {
         move_snake(current_direction);
     }
-    move_snake(current_direction);
 
     if (is_game_over()) {
         clearInterval(game_loop);
