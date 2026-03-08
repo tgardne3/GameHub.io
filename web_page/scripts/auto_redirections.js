@@ -12,3 +12,5 @@ function redirect_to_home() {
         window.location.href = "../index.html";
     }, 2100);
 }
+
+export { redirect_to_home };

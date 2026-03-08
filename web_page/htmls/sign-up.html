@@ -10,7 +10,7 @@ class: CS3300
     <!--linking css file-->
     <link rel="stylesheet" href="../styles.css" type="text/css" />
     <!--<link rel="javascript" href="../app.js" type="javascript" />-->
-    <script src="../app.js"></script>
+    <script type="module" src="../app.js"></script>
 
     
     <title>Sign Up</title>
@@ -41,8 +41,8 @@ class: CS3300
         <h2>Create Your Account</h2>
 
         <!--username input-->
-        <label class="sign-up-input" for="username">username/email (<span>required</span>)</label>
-        <input type="text/email" id="username"/>
+        <label class="sign-up-input" for="username">create username (<span>required</span>)</label>
+        <input type="text" id="username"/>
 
         <!--password input-->
         <label for="password">create password (<span>required</span>)</label>
@@ -52,8 +52,7 @@ class: CS3300
         <input type="password" id="confirm_password"/>
  
         <!--sign-up finish button-->
-        <button type="button" onclick="sign_up()" id="sign-up-button">Sign Up</button>
-        <script src="../app.js"></script>
+        <button type="button" id="sign-up-button">Sign Up</button>
 
       </form>
     </div>
