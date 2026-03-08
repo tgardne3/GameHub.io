@@ -8,11 +8,9 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
 
 // from other script files
-import { redirect_to_home } from "./scripts/auto_redirections"; 
+import { redirect_to_home } from "./scripts/auto_redirections.js"; 
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -48,7 +46,7 @@ function sign_up() {
         .then((userCredential) => {
           const user = userCredential.user;
           console.log("User created:", user);
-        })
+        });
     
 
     //AZAM: STORE DATA IF PASSWORDS MATCH
