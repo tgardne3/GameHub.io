@@ -2,9 +2,15 @@
 names: Azam, Brandon, David, Trey
 class: CS3300
 */
-// from firebase and firebase auth
+
+//import from firebase-app
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+//import from firebase-auth
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"; 
+
+//import from firebase-analytics
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
 
 // from other script files
@@ -30,14 +36,24 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+//Constants and global definitions
+let username = '';
+
+//######### USER STATE FUNCTIONS ##########
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    display_logged_in_UI(user);
+  } else {
+    display_logged_out_UI();
+  }
+});
 
 
-
-
+//######## ACCOUNT FUNCTIONS ###########
 
 //collect and store data when submit button is clicked
 async function sign_up() {
-    const username = document.getElementById('username').value;
+    username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const password_check = document.getElementById('confirm_password').value;
 
@@ -62,19 +78,20 @@ async function sign_up() {
 //signing in verification
 async function sign_in() {
     //pull values
-    const username = document.getElementById('username').value;
+    username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
 
     //AZAM: VERIFY USERNAME + PASSWORD WITH DB
-    console.log(`Verify Info: , ${username} - ${password}`);//print debugging
     const email = `${username}@GameHub.io`;
+    console.log(`Verify Info: ,  ${email} - ${username} - ${password}`);//print debugging
 
     try {
       //try user sign in and save returned object for verification
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;//use this variable for page states?
-      // User is signed in
+      redirect_to_home();
+
+    //checking for log in errors (returned from firebase)
     } catch (error) {
       switch (error.code) {
         case 'auth/user-not-found':
@@ -93,13 +110,41 @@ async function sign_in() {
           console.log('Something went wrong:', error.message);
       }
     }
+}
 
-  if (user) {
-    redirect_to_home();
+//######### UI DIPLAY FUNCTIONS ##############
+
+function display_logged_in_UI() {
+
+  //this needs to be changed to specify index vs games page
+  const nav = document.querySelector('nav');
+  if (nav) {
+    nav.innerHTML = `
+      <span>Welcome, ${username} | </span>
+      <a href="./htmls/account.html">My <b>Account</b></a> 
+    `;
+  }
+}
+
+function display_logged_out_UI() {
+
+  const nav = document.querySelector('nav');
+  if (nav) {
+    nav.innerHTML = `
+      <a href="./htmls/sign-in.html">Sign <b>In</b> |</a>
+      <a href="./htmls/sign-up.html">Sign <b>Up</b></a> 
+    `
   }
 
 }
 
 
-//event listeners
-document.getElementById('sign-up-button').addEventListener('click', sign_up);
+//######### EVENT LISTENERS ################
+
+// create button objects
+const sign_up_button = document.getElementById('sign-up-button');
+const sign_in_button = document.getElementById('sign-in-button');
+
+//check if exists on page before creating listener
+if(sign_in_button) document.addEventListener('click', sign_in);
+if(sign_up_button) document.addEventListener('click', sign_up);
