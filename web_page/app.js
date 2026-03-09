@@ -73,7 +73,7 @@ async function sign_up() {
         window.location.href = "successful-sign-up.html";
 
       })
-      .catch(error) => {
+      .catch((error) => {
         console.error("Sign up failed:", error.message);
         alert("Sign up failed: " + error.message);
     });
