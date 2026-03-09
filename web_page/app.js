@@ -69,7 +69,7 @@ async function sign_up() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log("User created:", userCredential.user);
-        
+        const user = userCredential.user;
         window.location.href = "successful-sign-up.html";
 
       })
