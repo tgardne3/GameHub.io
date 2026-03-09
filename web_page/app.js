@@ -64,15 +64,20 @@ async function sign_up() {
       alert("Passwords DON'T match!");
       return;
     }
-    try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+  
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
         console.log("User created:", userCredential.user);
-        window.location.href = "successful-sign-up.html"; // only runs on success
-    } catch (error) {
+        
+        window.location.href = "successful-sign-up.html";
+
+      })
+      .catch(error) => {
         console.error("Sign up failed:", error.message);
         alert("Sign up failed: " + error.message);
-    }
-    
+    });
+
 }//sign_in
 
 //signing in verification
