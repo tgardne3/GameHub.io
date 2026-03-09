@@ -37,7 +37,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 //Constants and global definitions
-let username = '';
 
 //######### USER STATE FUNCTIONS ##########
 onAuthStateChanged(auth, (user) => {
@@ -53,7 +52,7 @@ onAuthStateChanged(auth, (user) => {
 
 //collect and store data when submit button is clicked
 async function sign_up() {
-    username = document.getElementById('username').value;
+    const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const password_check = document.getElementById('confirm_password').value;
 
