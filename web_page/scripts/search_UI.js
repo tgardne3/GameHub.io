@@ -92,6 +92,14 @@ function search_games(event) {
         if (key.key === 'Enter' && filtered_games.length === 1) {
             window.location.href = filtered_games[0].game_path;
         }
+
+        if (key.key === 'Enter' && search_query === 'leaderboard') {
+            window.location.href = "htmls/leaderboard.html";
+        }
+
+        if (key.key === 'Enter' && search_query === 'settings') {
+            window.location.href = "htmls/account.html";
+        }
     });
 }//search_games
 
