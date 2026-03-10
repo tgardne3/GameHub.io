@@ -133,7 +133,7 @@ function display_logged_in_UI(user) {
   const nav = document.querySelector('nav');
   if (nav) {
     nav.innerHTML = `
-      <span>Welcome, <b>${username}</b>   </span>
+      <span>Welcome, <b>${username}</b></span>
       <a href="./htmls/account.html">
         <img src="./images/settings_icon.png"></img>
       </a> 

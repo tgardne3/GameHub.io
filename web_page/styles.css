@@ -73,6 +73,9 @@ class: CS3300
     font-size: 22px;
 }
 
+.right-header span {
+    margin-right: 15px;
+}
 
 .right-header img {
     width: 40px;
