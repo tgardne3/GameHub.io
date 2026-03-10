@@ -105,9 +105,7 @@ table, th, td{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0 auto;
     justify-content: center;
-    text-align: center;
 }
 
 .full-leaderboard-containers th {
@@ -115,7 +113,7 @@ table, th, td{
 }
 
 .full-leaderboard-containers table {
-    margin: 20px;
+    margin: 10px;
 }
 
 .rank-col {
@@ -123,12 +121,14 @@ table, th, td{
 }
 
 .leaderboard {
-    display: flex;
-    margin: 0 auto;
-    text-align: center;
-    width: 600px;
+    width: 400px;
     background-color: rgb(252, 234, 143);
     margin: 15px;
+    border-radius: 15px;
+}
+
+.leaderboard table {
+    width: 375px;
 }
 
 /*Games List*/
