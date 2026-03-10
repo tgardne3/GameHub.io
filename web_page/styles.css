@@ -103,13 +103,11 @@ table, th, td{
 
 .full-leaderboard-containers {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin: 0 auto;
     justify-content: center;
     text-align: center;
-    background-color: rgb(252, 234, 143);
-    width: 800px;
-    border-radius: 15px;
 }
 
 .full-leaderboard-containers th {
@@ -123,12 +121,23 @@ table, th, td{
 .rank-col {
     width: 70px;
 }
+
+.leaderboard {
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    width: 600px;
+    background-color: rgb(252, 234, 143);
+    margin: 15px;
+}
+
 /*Games List*/
 
 /*List Container*/
 .games-container {
     color: #FFED29;
 }
+
 .games-container,
 .games-container img,
 .games-container a 
@@ -140,6 +149,7 @@ table, th, td{
     text-align: center;
     white-space: nowrap;
 }
+
 .games-container h2 {
     font-size: 30px;
 }
