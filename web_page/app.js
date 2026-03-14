@@ -129,7 +129,7 @@ function display_logged_in_UI(user) {
   //getting username value:
   const username = user.email.slice(0, -11);
 
-  //this needs to be changed to specify index vs games page
+  //############## PAGE NAVIGATION ##################### 
   const nav = document.querySelector('nav');
   if (nav) {
     nav.innerHTML = `
@@ -139,10 +139,22 @@ function display_logged_in_UI(user) {
       </a> 
     `;
   }
+
+  //############## ACCOUNT SETTINGS ####################
+  const user_settings = document.querySelector(".user-settings")
+  if (user_settings) {
+    user_settings.innerHTML = `
+      <div class="user-form">
+        <button type="button" id="sign-out-button">Sign Out</button>
+      </div>
+    `;
+     document.getElementById("sign-out-button").addEventListener("click", sign_out);
+  }
 }
 
 function display_logged_out_UI() {
 
+  //########## PAGE NAVIGATION ###################
   const nav = document.querySelector('nav');
   if (nav) {
     nav.innerHTML = `
@@ -153,9 +165,15 @@ function display_logged_out_UI() {
       </a>
     `
   }
+    //############## ACCOUNT SETTINGS ####################
+    const user_settings = document.querySelector(".user-settings");
+    if(user_settings) {
+      user_settings.innerHTML = `
+        <h2>Sign In to See Account Settings</h2>
+      `;
+    }
 
 }
-
 
 //######### EVENT LISTENERS ################
 
