@@ -144,8 +144,14 @@ function display_logged_in_UI(user) {
   const user_settings = document.querySelector(".user-settings")
   if (user_settings) {
     user_settings.innerHTML = `
-      <div class="user-form">
-        <button type="button" id="sign-out-button">Sign Out</button>
+      <div class="user-settings-content">
+        <div class="account-info">
+          <h2> Username: </h2>
+          <input placeholder="${username}/>
+        </div>
+        <div class="user-form">
+          <button type="button" id="sign-out-button">Sign Out</button>
+        </div>
       </div>
     `;
      document.getElementById("sign-out-button").addEventListener("click", sign_out);
