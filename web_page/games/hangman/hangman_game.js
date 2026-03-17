@@ -1,3 +1,6 @@
+import { db } from "./firebase-init.js";
+import { collection, addDoc } from "firebase/firestore";
+
 // Decalre Variables
 let word;
 let lives;
