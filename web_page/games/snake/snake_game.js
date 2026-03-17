@@ -1,5 +1,6 @@
 import { db } from "./firebase-init.js";
 import { collection, addDoc } from "firebase/firestore";
+export {reset_game, is_game_over, move_snake, grow_snake, fruit, snake}; // add export to import it into reder file to get around issue
 
 // Declare variables
 let end_game = false;
