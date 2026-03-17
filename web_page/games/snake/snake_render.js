@@ -69,6 +69,6 @@ function run_snake() {
     game_loop = setInterval(game_tick, 200);
 }
 
-// window.onload = function () {
-//     run_snake();
-// };
+window.onload = function () {
+    run_snake();
+};
