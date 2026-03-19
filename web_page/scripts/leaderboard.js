@@ -2,7 +2,7 @@
 //class: CS3300
 
 import { db } from "./firebase-init.js";
-import { collection, query, where, orderBy, limit, getDocs } from "firebase/firestore";
+import { collection, query, where, orderBy, limit, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 
 leaderboard_data = [
