@@ -155,11 +155,10 @@ function display_logged_in_UI(user) {
   if (user_settings) {
 
     const admin_button = `
-      <div class="user-form">
+        <h1> Admin Settings: </h1>
         <form action="../htmls/documentation.html">
           <input style="width: 200px; margin-top: 2em;" type="submit" value="Get Documentation" />
         </form>
-      </div>
     `;
 
     user_settings.innerHTML = `
@@ -238,17 +237,20 @@ function display_logged_in_UI(user) {
           </table>
         </div>
 
-        <hr>
-
         <div class="user-form">
+          <div class="admin-settings"></div>
+
+          <hr>
+
           <button style="margin-top: 1em; margin-bottom: 1em;" type="button" id="sign-out-button">Sign Out</button>
+
         </div>
 
-        <hr>
       </div>
     `;
     if(/^admin\d$/.test(username)) {
-        user_settings.innerHTML += admin_button;
+        const admin_settings = document.querySelector(".admin-settings");
+        admin_settings.innerHTML += admin_button;
     }
      document.getElementById("sign-out-button").addEventListener("click", sign_out);
   }
