@@ -368,7 +368,8 @@ table, th, td{
 
 .documentation {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -382,6 +383,10 @@ table, th, td{
 .documentation hr {
     width: 600px;
     margin-bottom: 1em;
+}
+
+.documentation embed {
+    margin: 20px;
 }
 
 
