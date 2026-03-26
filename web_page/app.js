@@ -156,7 +156,9 @@ function display_logged_in_UI(user) {
 
     const admin_button = `
       <div class="user-form">
-        <button style="width: 200px; margin-top: 2em;" type="button" id="documentation">Get Documentation</button>
+        <form action="../htmls/documentation.html">
+          <input style="width: 200px; margin-top: 2em;" type="submit" value="Get Documentation" />
+        </form>
       </div>
     `;
 
@@ -239,8 +241,10 @@ function display_logged_in_UI(user) {
         <hr>
 
         <div class="user-form">
-          <button style="margin-top: 1em;" type="button" id="sign-out-button">Sign Out</button>
+          <button style="margin-top: 1em; margin-bottom: 1em;" type="button" id="sign-out-button">Sign Out</button>
         </div>
+
+        <hr>
       </div>
     `;
     if(/^admin\d$/.test(username)) {

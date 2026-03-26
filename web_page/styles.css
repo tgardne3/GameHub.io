@@ -244,7 +244,7 @@ table, th, td{
     font-size: 17px;
     background-color: darkgray;
 }
-.user-form button {
+.user-form button, input[type="submit"] {
     animation: submission_button ease-out 0.50s;
     margin: 0 auto;
     width: 120px;
@@ -363,6 +363,28 @@ table, th, td{
     height: 50px;
     width: 330px;
 }
+
+/*Documentation Section*/
+
+.documentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+}
+
+.documentation h1 {
+    font-size: 25px;
+}
+
+.documentation hr {
+    width: 600px;
+    margin-bottom: 1em;
+}
+
+
 /*Animations*/
 /*Submission Pages*/
 
