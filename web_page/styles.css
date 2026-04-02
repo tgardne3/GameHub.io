@@ -399,6 +399,23 @@ table, th, td{
     margin: 20px;
 }
 
+/*TYPE SPRINT*/
+.type-sprint {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+}
+
+.type-sprint mark {
+    background-color: #FFED29;
+    padding: 3px;
+    border-radius: 5px;
+}
+
 
 /*Animations*/
 /*Submission Pages*/
