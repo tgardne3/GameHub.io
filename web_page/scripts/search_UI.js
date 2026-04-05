@@ -100,7 +100,7 @@ function display_games(games) {
         }
     }
     else {//resizing background for website navigation
-        container.style.height = "100px";
+        container.style.height = "85px";
         container.style.width = "250px";
     }
 }

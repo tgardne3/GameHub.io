@@ -24,18 +24,15 @@ class: CS3300
       <div class="right-header"></div>
     </div>
     <!--END HEADER-->
-    <!--canvas-->
-    <div class="game-display">
-      <canvas id="type_sprint_canvas" width="400" height="400"></canvas>
-    </div>
-    
-    <!--button-->
-    <br/><br/>
-
-    <div class="user-form">
-      <button onclick="run_type_sprint(lives)">Start</button>
+    <!--Inject Game Here-->
+    <div class="type-sprint"></div>
+    <div class="type-sprint">
     </div>
 
-    <br/><br/>
+    <div class="stats">
+      <h1>Stats:</h1>
+      <p> last run - wpm = ... ; accuracy = ...; score = ...</p>
+    </div>
+   <script type="module" src="type_sprint.js"></script> 
   </body>
 </html>

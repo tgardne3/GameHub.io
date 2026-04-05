@@ -213,6 +213,10 @@ table, th, td{
     color: black;
     margin-top: 20px;
 }
+
+.navigation a {
+    color: black;
+}
 /*END Games List*/
 
 /* Game Pages */
@@ -364,6 +368,12 @@ table, th, td{
     width: 330px;
 }
 
+.error-message a {
+    color: #FFED29;
+}
+
+
+
 /*Documentation Section*/
 
 .documentation {
@@ -387,6 +397,32 @@ table, th, td{
 
 .documentation embed {
     margin: 20px;
+}
+
+/*TYPE SPRINT*/
+.type-sprint {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.type-sprint mark {
+    background-color: #FFED29;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.type-sprint p {
+    width: 900px;
+    font-size: 35px;
+    white-space: pre-wrap;
+}
+
+.ts-input {
+    color: #FFED29;
 }
 
 
