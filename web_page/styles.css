@@ -416,6 +416,10 @@ table, th, td{
     border-radius: 5px;
 }
 
+.type-sprint p {
+    width: 800px;
+}
+
 
 /*Animations*/
 /*Submission Pages*/
