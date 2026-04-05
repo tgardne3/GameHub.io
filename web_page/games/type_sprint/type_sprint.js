@@ -119,9 +119,9 @@ let words = [
   "yes","yet","you","young","your","yourself"
 ];
 
-const text = [];
+let text = [];
 let current_word = '';
-let  word_count = 0;
+let word_count = 0;
 let correct = 0;
 let incorrect = 0;
 let accuracy = 0;
@@ -164,10 +164,23 @@ function display_type_sprint() {
 
         const body = document.querySelector('.type-sprint');
         console.log(`in display the  is : ${word_count}`);
-        if(word_count > 0) {
-            body.innerHTML = ``;
-        }
+        body.innerHTML = ``;
         body.appendChild(test_body);
+
+    if(word_count === (text.length)) {
+        word_count = 0;
+        current_word = '';
+        end_time = Date.now() / 1000;
+        test_time = (end_time - start_time);
+        wpm = 60/(num_words/test_time);
+
+        console.log(`wmp = ${wpm}`);
+
+        text = [];
+        generate_text();
+        alert("display scores here...");
+    }
+
     }
 }
 
@@ -195,20 +208,7 @@ function type_sprint() {
     accuracy = (num_words - incorrect)/num_words * 100;
     console.log(accuracy);
 
-    if(word_count === (text.length)) {
-        current_word = '';
-        end_time = Date.now() / 1000;
-        test_time = (end_time - start_time);
-        wpm = 60/(num_words/test_time);
-
-        console.log(`wmp = ${wpm}`);
-
-        alert("display scores here...");
-        return;
-    }
-
-
-    display_type_sprint();
+        display_type_sprint();
 }
 
 display_type_sprint();
@@ -220,19 +220,22 @@ function game_loop() {
 function generate_text() {
     for(let i = 0; i < num_words; i++){
         text.push(words[Math.floor(Math.random() * words.length)]); // pick a random word   
-        console.log(text);
     }
     display_type_sprint();
 }
 
 
 //capturing keypresses
-document.querySelector("button").addEventListener("click", generate_text());
-
-const page = document.addEventListener("keypress", (event) => {
+if(text.length === 0) {
+    generate_text();
+}
+const page = document.addEventListener("keydown", (event) => {
     if(event.code === 'Space') {
         game_loop(text);
-    } else {
+    } else if (event.code === 'Backspace'){
+        current_word = current_word.slice(0, -1);
+    } 
+    else {
         current_word += event.key;
     }
 });

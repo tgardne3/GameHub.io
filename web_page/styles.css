@@ -407,7 +407,7 @@ table, th, td{
     align-items: center;
     text-align: center;
     color: white;
-    font-size: 22px;
+    font-size: 28px;
 }
 
 .type-sprint mark {
@@ -417,7 +417,7 @@ table, th, td{
 }
 
 .type-sprint p {
-    width: 800px;
+    width: 900px;
 }
 
 
