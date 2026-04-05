@@ -237,7 +237,7 @@ const page = document.addEventListener("keydown", (event) => {
     } else if (event.code === 'Backspace'){
         current_word = current_word.slice(0, -1);
     } 
-    else {
+    else if(event.key.length === 1){
         current_word += event.key;
     }
     display_type_sprint();
