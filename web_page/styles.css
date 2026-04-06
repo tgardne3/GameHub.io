@@ -425,6 +425,27 @@ table, th, td{
     color: #FFED29;
 }
 
+.stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.stats hr {
+    width: 900px;
+}
+
+.stats table {
+    color: black;
+}
+
+.stats p {
+    color: black;
+}
+
 
 /*Animations*/
 /*Submission Pages*/

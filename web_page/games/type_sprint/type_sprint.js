@@ -116,7 +116,7 @@ let words = [
   "white","who","whole","whom","whose","why","wide","wife","will","win","wind",
   "window","wish","with","within","without","woman","wonder","word","work",
   "worker","world","worry","would","write","writer","wrong","yard","yeah","year",
-  "yes","yet","you","young","your","yourself"
+  "yes","yet","you","young","your","yourself", "hippopotamus", "buttcrack", "doody", "penguin"
 ];
 
 let text = [];
@@ -165,7 +165,6 @@ function display_type_sprint() {
         `;
 
         const body = document.querySelector('.type-sprint');
-        console.log(`in display the  is : ${word_count}`);
         body.innerHTML = ``;
         body.appendChild(test_body);
 
@@ -174,13 +173,14 @@ function display_type_sprint() {
         current_word = '';
         end_time = Date.now() / 1000;
         test_time = (end_time - start_time);
-        wpm = 60/(num_words/test_time);
+        console.log(`Total Time: ${test_time}`);
+        wpm = (60*(num_words/test_time));
 
-        console.log(`wmp = ${wpm}`);
+        console.log(`WPM: ${wpm}`);
 
         text = [];
         generate_text();
-        alert("display scores here...");
+        alert(`WPM = ${wpm}`);
     }
 
     }
