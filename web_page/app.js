@@ -249,7 +249,7 @@ function display_logged_in_UI(user) {
 
       </div>
     `;
-    if(/^admin\d$/.test(username)) {
+    if(username === "admin4" || username === "admin1" || username == "admin2") {
         const admin_settings = document.querySelector(".admin-settings");
         admin_settings.innerHTML += admin_button;
     }
