@@ -67,7 +67,7 @@ let words = [
   "move","movement","movie","Mr","Mrs","much","music","must","my","myself",
   "name","nation","national","natural","nature","near","nearly","necessary",
   "need","network","never","new","news","newspaper","next","nice","night","no",
-  "none","nor","north","not","note","nothing","notice","now","n't","number",
+  "none","nor","north","not","note","nothing","notice","now","number",
   "occur","of","off","offer","office","officer","official","often","oh","oil",
   "ok","old","on","once","one","only","onto","open","operation","opportunity",
   "option","or","order","organization","other","others","our","out","outside",
