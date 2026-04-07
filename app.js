@@ -70,6 +70,7 @@ async function sign_up() {
         console.log("User created:", userCredential.user);
         const user = userCredential.user;
         window.location.href = "successful-sign-up.html";
+        localStorage.setItem("username", username);
 
       })
       .catch((error) => {
@@ -93,6 +94,7 @@ async function sign_in() {
     try {
       //try user sign in and save returned object for verification
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      localStorage.setItem("username", username);
       redirect_to_home();
 
     //checking for log in errors (returned from firebase)

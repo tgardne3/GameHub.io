@@ -1,5 +1,11 @@
+// import { db } from "../../scripts/firebase-init.js";
+// import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"; 
+import { set_current_direction } from "./snake_render.js";
+export { reset_game, is_game_over, move_snake, grow_snake, next_head, fruit, snake }; // add export to import it into reder file to get around issue
+
 // Declare variables
 let end_game = false;
+// let score_saved = false;
 
 let fruit = {x: 8, y: 6}; // initial fruit spawn
 
@@ -94,7 +100,13 @@ function detect_collision(head) {
 }
 
 // Function to tell the render.js if game is over
+// also double checks to make sure the score is saved since functions are in awkward orders
 function is_game_over() {
+    // if (end_game && !score_saved) {
+    //     score_saved = true;
+    //     saveScore();
+    //     console.log("Game Over - score sent to Firebase"); // adding this line to make sure this line is executed so i can check firebase
+    // }
     return end_game;
 }
 
@@ -118,7 +130,8 @@ function spawn_fruit(snake_set) {
 // Function to reset the game
 function reset_game() {
     end_game = false;
-
+    // score_saved = false; //this should allow resaves
+    
     fruit = {x: 8, y: 6};  // set fruit to default spot
 
     snake = [               // reset snake 
@@ -133,7 +146,7 @@ function reset_game() {
     "3,6",
     ])
 
-    current_direction = "s";
+    set_current_direction("s");
 
     score = 3;
     update_score_display();
@@ -144,3 +157,24 @@ function update_score_display() {
     const score_element = document.getElementById("snake_score");
     score_element.textContent = score;
 }
+
+// // function to update score
+// async function saveScore() {
+//     const username = localStorage.getItem("username");
+//     if (!username) {
+//         console.log("No username found");
+//         return;
+//     }
+//     try {
+//         await addDoc(collection(db, "leaderboard"), {
+//             username: username,
+//             score: score,
+//             game: "Snake Game",
+//             timestamp: Date.now()
+//         });
+//         // if it works
+//         console.log("Score saved!");
+//     } catch (error) { //error
+//         console.error("Error saving score:", error);
+//     }
+// }

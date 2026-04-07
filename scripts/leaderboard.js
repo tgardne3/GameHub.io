@@ -1,6 +1,10 @@
 //name: Azam, Brandon, David, Trey
 //class: CS3300
 
+import { db } from "./firebase-init.js";
+import { collection, query, where, orderBy, limit, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+
 leaderboard_data = [
     {game: "HangMan", score: "NA", player: "NA"},
     {game: "Snake Game", score: "NA", player: "NA"},
@@ -61,10 +65,51 @@ document.addEventListener("DOMContentLoaded", function () {
     display_leaderboard(leaderboard_data);
 });
 
+
 //display full leaderboard page
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
+    // add in games
+    const games = [
+        "HangMan",
+        "Snake Game",
+        "Type Sprint",
+        "Light Racer",
+        "Land Mine",
+        "...Online..."
+    ];
+
+    let full_leaderboard_data = [];
+    for (let game of games) {
+        //get data
+        const qry = query(
+            collection(db, "leaderboard"),
+            where("game", "==", game),
+            orderBy("score", "desc"),
+            limit(5)
+        );
+        const snapshot = await getDocs(qry);
+        let rank = 1;
+
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            // push data
+            full_leaderboard_data.push({
+                game: game,
+                rank: rank,
+                score: data.score,
+                player: data.username
+            });
+            // increase rank
+            rank++;
+        });
+    }
+    // now display the full function
     display_full_leaderboard(full_leaderboard_data);
 });
+
+
+
+
 
 //display leaderboard info
 function display_leaderboard(leaderboard_data) {

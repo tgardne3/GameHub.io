@@ -1,3 +1,6 @@
+import { db } from "./firebase-init.js";
+import { collection, addDoc } from "firebase/firestore";
+
 // Decalre Variables
 let word;
 let lives;
@@ -207,4 +210,26 @@ function run_hangman() {
     display_hangman(lives);
 
     document.addEventListener("keydown", handleKeyPress);
+}
+//  saving score
+async function saveScore(score) {
+  const username = localStorage.getItem("username");
+  if (!username) {
+    console.log("username not found");
+    return;
+  }
+  await addDoc(collection(db, "leaderboard"), {
+    username: username,
+    score: score,
+    game: "HangMan",
+    timestamp: Date.now()
+  });
+  console.log("Score saved!");
+}
+
+
+// obvious endgame func to reference savescore func.
+function endGame(finalScore) {
+  console.log("Game Over. Score:", finalScore);
+  saveScore(finalScore);
 }
