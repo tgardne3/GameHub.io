@@ -190,7 +190,7 @@ function draw_game(snake, fruit, current_direction) {
     draw_grid();
     draw_boundaries();
     draw_snake(snake, current_direction, snake_colors);
-    draw_fruit(fruit);
+    if (fruit) { draw_fruit(fruit); }
     return;
 }
 
