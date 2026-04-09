@@ -7,3 +7,9 @@ project: GameHub.io
 
 //This script will be used to dynamically create
 //documentation page based on what files are present in the DB
+import { user, auth } from "../app.js";
+
+function update_user_info(username, password, displayname) {
+    if(user && auth) {
+    }
+}

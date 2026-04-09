@@ -16,6 +16,7 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase
 // from other script files
 import { redirect_to_home } from "./scripts/auto_redirections.js"; 
 
+export let user;
 
 // Import the functions you need from the SDKs you need
 // TODO: Add SDKs for Firebase products that you want to use
@@ -35,7 +36,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+export const auth = getAuth(app);
 
 //Constants and global definitions
 
@@ -69,7 +70,7 @@ async function sign_up() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log("User created:", userCredential.user);
-        const user = userCredential.user;
+        user = userCredential.user;
         window.location.href = "successful-sign-up.html";
 
       })
