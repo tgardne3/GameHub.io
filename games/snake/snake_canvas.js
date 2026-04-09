@@ -146,15 +146,17 @@ function draw_head(head, direction, list_of_colors) {
 // Function to draw the fruit
 function draw_fruit(fruit) {
 
-    ctx.fillStyle = "red";
-    ctx.fillRect(fruit.x * cell_size, fruit.y * cell_size, cell_size, cell_size);
-
     let center_x = fruit.x * cell_size + cell_size / 2;
     let center_y = fruit.y * cell_size + cell_size / 2;
 
+    ctx.fillStyle = "red";
+    ctx.beginPath();
+    ctx.arc(center_x, center_y, cell_size * 0.4, 0, Math.PI * 2);
+    ctx.fill();
+
     ctx.fillStyle = "green";
     ctx.beginPath();
-    ctx.arc(center_x, center_y, cell_size * 0.15, 0, Math.PI * 2);
+    ctx.arc(center_x, center_y, cell_size * 0.1, 0, Math.PI * 2);
     ctx.fill();
 }
 
