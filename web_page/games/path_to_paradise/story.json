@@ -1,41 +1,60 @@
 {
     "0.0": {
-        "text": "Have you played a text based adventure before?",
-        "a": "I have played many before",
-        "b": "I played one a really long time ago",
-        "c": "I've never played a text based game before",
-        "d": "What is a texted based adventure game?"
+        "text": "Have you played a <b>text based</b> adventure before?",
+        "a": "<b>A:</b> I have played many before",
+        "b": "<b>B:</b> I played one a really long time ago",
+        "c": "<b>C:</b> I've never played a text based game before",
+        "d": "<b>D:</b> What is a texted based adventure game?"
     },
 
     "0.1": {
-        "text": "Well good for you...",
-        "a": "Continue...",
-        "b": "Continue...",
-        "c": "Continue...",
-        "d": "Continue..."
+        "text": "Sweet!"
     },
 
     "0.2": {
-        "text": "Welcome nostalgia chaser :) (this probably won't hit the spot...)",
-        "a": "Continue...",
-        "b": "Continue...",
-        "c": "Continue...",
-        "d": "Continue..."
+        "text": "Welcome back nostagia hunter."
     },
 
     "0.3": {
-        "text": "What are you doing here?",
-        "a": "Continue...",
-        "b": "Continue...",
-        "c": "Continue...",
-        "d": "Continue..."
+        "text": "Probably not the best place to start..."
     },
     
     "0.4": {
-        "text": "I don't know google it or something.",
-        "a": "Continue...",
-        "b": "Continue...",
-        "c": "Continue...",
-        "d": "Continue..."
+        "text": "No way you thought I was gonna write a tutorial for this..."
+    },
+
+    "1.0": {
+        "text": "Wecome to Path to <b>Paradise</b> <hr> A sci-fi story across <b>planets</b>, where <b>choices</b> matter <br> Press 'Continue' to start your adventure"
+    },
+
+    "2.0": {
+        "text": "<b>Whoosh...</b> a ship flies concerningly low overhead as you cross a long landing platform. Beneath you is miles of rushing <b>lights</b>,  hundreds of <b>ships</b>, and thousands of <b>landing platforms</b> just like yours all funneling down and around a large circle that stretches too far down to see the bottom."
+    },
+
+    "3.0": {
+        "text": "Among the pouring rain and the rips of wind from large <b>cargo ships'</b> engines taking off on the platforms surrounding you; the man you've been following shouts \"This one's yours, last chance to double check you've got everything. This is a <b>one way</b> ticket.\"",
+        "a": "<b>A: </b> Check pockets",
+        "b": "<b>B: </b> Respond",
+        "c": "<b>C: </b> Ask about the ship",
+        "d": "<b>D: </b> Continue following"
+    },
+
+    "4.1": {
+        "text": "As you pat yourself down you feel the familiar shapes of your ownly belongings. Your <b>interplanetary passport</b>, a spoof of course. A small <b>charge pistol</b> pinched in the back of your waistband covered by a heavy black leather jacket, and roughly <b>4,000 common credits</b> the most universally accepted currency."
+    },
+    "4.2": {
+        "text": "\"Trust me, I wouldn't have gotten this far with out dotting my i's and crossing my t's...\" you shout over the rain<br>\"Well you probably wouldn't <b>be</b> here if you dotted your i's and crossed your t's\" the man shoots back mockingly"
+    },
+    "4.3": {
+        "text": "\"Nothing special about this cargo ship, exactly the way you'd want it for a trip like this.\" the man responds in a matter-of-factly manner. We're transporting mostly <b>minerals</b> and <b>hard resources</b>, the primary economy of this shit-hole. You'll be with the cargo considering this ship isn't regisered for commercial flights\""
+    },
+    "4.4": {
+        "text": "\"You'll be holed up in the back with the cargo, this ship isn't liscensed for commercial flights.\" you hear as you approach the side of the ship."
     }
+
+
+
+
+
+
 }
