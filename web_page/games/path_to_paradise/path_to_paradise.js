@@ -10,6 +10,8 @@ let d_choice = 0.4;
 let story_set = 0;
 let current_set = (0.0).toFixed(1);
 let story = {};
+const space_bar = new Audio("../../audio/space_bar.wav");
+const key_stroke = new Audio ("../../audio/key_stroke.wav");
 
 
 //path to paradise game logic
@@ -30,6 +32,16 @@ function display_text() {
 
         setTimeout(() => {
             text_body.innerHTML = text_string.slice(0, i);
+            const key_sound = key_stroke.cloneNode();//allows to audio to overlap with itself
+            const space_sound = space_bar.cloneNode();
+
+            if((i%3) === 0) {
+             if(text_string[i] === " ") {
+                space_sound.play();
+             } else {
+                key_sound.play();
+             }
+            }
         }, 35 * i);
     }
 
