@@ -137,7 +137,7 @@ function start_timer() {
     start_time = Date.now() / 1000;
 }
 //display game
-function display_type_sprint() {
+async function display_type_sprint() {
 
     if(text.length > 0){
 
@@ -183,6 +183,12 @@ function display_type_sprint() {
         generate_text();
         alert(`WPM = ${wpm}`);
         saveScore("typesprint", wpm);
+        try {
+            await saveScore("typesprint", wpm);
+            alert(`WPM = ${wpm} ✅ Score saved to leaderboard!`);
+        } catch (err) {
+            alert(`WPM = ${wpm} ❌ Score NOT saved: ${err.message}`);
+        }
 
     }
 
@@ -234,7 +240,7 @@ function generate_text() {
 if(text.length === 0) {
     generate_text();
 }
-const page = document.addEventListener("keydown", (event) => {
+const page = document.addEventListener("keydown", async (event) => {
     if(event.code === 'Space') {
         game_loop(text);
     } else if (event.code === 'Backspace'){
