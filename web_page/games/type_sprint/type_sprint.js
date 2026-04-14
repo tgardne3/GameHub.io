@@ -177,7 +177,7 @@ async function display_type_sprint() {
         console.log(`Total Time: ${test_time}`);
         wpm = (60*(num_words/test_time));
 
-        console.log(`WPM: ${wpm}`);
+        console.log(`WPM testing: ${wpm}`);
 
         text = [];
         generate_text();
