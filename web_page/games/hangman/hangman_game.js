@@ -1,8 +1,11 @@
+import { saveScore } from "./leaderboard.js";
+
 // Decalre Variables
 let word;
 let lives;
 let guessed_letters;
 let display;
+let streak = 0;
 
 // List of possible words
 let words = [
@@ -146,9 +149,13 @@ function new_guess(letter) {
     }
     if (lives === 0) {  // Game over, you lose
         alert("Game Over!\nThe word was: " + word);
+        streak = 0;                                                 // reset streak here if game is lost; 
         document.removeEventListener("keydown", handleKeyPress);
     } else if (!display.includes("_")) {   // Game over, you win
         alert("You Win!\n You guessed the word: " + word);
+        streak++;                                                   // increase streak here
+        saveScore("hangman", streak);                              // add to db
+        alert("You Win!");
         document.removeEventListener("keydown", handleKeyPress);
     } else {   // go to next guess
         guessed_letters.push(letter);

@@ -183,12 +183,7 @@ function display_type_sprint() {
         generate_text();
         alert(`WPM = ${wpm}`);
         saveScore("typesprint", wpm);
-        try {
-            await saveScore("typesprint", wpm);
-            alert(`WPM = ${wpm} Score saved to leaderboard!`);
-        } catch (err) {
-            alert(`WPM = ${wpm} Score NOT saved: ${err.message}`);
-        }
+
     }
 
     }
