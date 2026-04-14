@@ -1,5 +1,7 @@
-import { db } from "./firebase-init.js";
-import { collection, addDoc } from "firebase/firestore";
+// import { db } from "./firebase-init.js";
+// import { collection, addDoc } from "firebase/firestore";
+import { draw_head, draw_body, draw_right_arm, draw_left_arm, draw_right_leg, draw_left_leg, draw_gallows } from "./hangman_canvas.js";
+export { run_hangman };
 
 // Decalre Variables
 let word;
@@ -124,6 +126,9 @@ let words = [
   "yes","yet","you","young","your","yourself"
 ];
 
+// Start button
+document.getElementById("startButton").addEventListener("click", run_hangman);
+
 // Event listener to  take in keyboard input, and assign value to guess
 function handleKeyPress(e) {
     const guess = e.key.toLowerCase();
@@ -212,24 +217,24 @@ function run_hangman() {
     document.addEventListener("keydown", handleKeyPress);
 }
 //  saving score
-async function saveScore(score) {
-  const username = localStorage.getItem("username");
-  if (!username) {
-    console.log("username not found");
-    return;
-  }
-  await addDoc(collection(db, "leaderboard"), {
-    username: username,
-    score: score,
-    game: "HangMan",
-    timestamp: Date.now()
-  });
-  console.log("Score saved!");
-}
+// async function saveScore(score) {
+//   const username = localStorage.getItem("username");
+//   if (!username) {
+//     console.log("username not found");
+//     return;
+//   }
+//   await addDoc(collection(db, "leaderboard"), {
+//     username: username,
+//     score: score,
+//     game: "HangMan",
+//     timestamp: Date.now()
+//   });
+//   console.log("Score saved!");
+// }
 
 
-// obvious endgame func to reference savescore func.
-function endGame(finalScore) {
-  console.log("Game Over. Score:", finalScore);
-  saveScore(finalScore);
-}
+// // obvious endgame func to reference savescore func.
+// function endGame(finalScore) {
+//   console.log("Game Over. Score:", finalScore);
+//   saveScore(finalScore);
+// }
