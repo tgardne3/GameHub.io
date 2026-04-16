@@ -1,12 +1,12 @@
 //name: Azam, Brandon, David, Trey
 //class: CS3300
 
-let default_choice = 0.0;
-let noChoice = false;
-let a_choice = 0.1;
-let b_choice = 0.2;
-let c_choice = 0.3;
-let d_choice = 0.4;
+let default_choice = 0.0; //entry point for reading JSON file
+let noChoice = false; //boolean for determining 
+let a_choice = 0.1; //JSON navigation
+let b_choice = 0.2; //JSON navigation
+let c_choice = 0.3; //JSON navigation
+let d_choice = 0.4; //JSON navigation
 let story_set = 0;
 let current_set = (0.0).toFixed(1);
 let story = {};
@@ -48,6 +48,7 @@ function display_text() {
             }
 
             if(i === text_string.length) {
+                //disabling input buffer
                 allowChoice = true;
             }
         }, 35 * i);
