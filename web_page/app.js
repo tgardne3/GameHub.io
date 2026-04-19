@@ -158,6 +158,7 @@ function display_logged_in_UI(user) {
 
     const admin_button = `
         <h1 style="font-size:25px;"> Admin Settings: </h1>
+        <hr>
         <form action="../htmls/documentation.html">
           <input style="width: 200px; margin-top: 2em;" type="submit" value="Get Documentation" />
         </form>
@@ -243,8 +244,23 @@ function display_logged_in_UI(user) {
         <div class="user-form">
           <div class="admin-settings"></div>
 
-          <hr>
+          <div class="game-settings">
 
+            <h1 style="margin-top: 2em;">Game Settings</h1>
+
+            <hr>
+
+            <h1 style="margin-top: 2em; font-size: 25px;">HangMan:</h1>
+
+            <h1 style="margin-top: 2em; font-size: 25px;">Snake:</h1>
+
+            <h1 style="margin-top: 2em; font-size: 25px;">TypeSprint:</h1>
+
+            <h1 style="margin-top: 2em; font-size: 25px;">Path to Paradise:</h1>
+
+          </div>
+
+          <hr>
           <button style="margin-top: 1em; margin-bottom: 1em;" type="button" id="sign-out-button">Sign Out</button>
 
         </div>

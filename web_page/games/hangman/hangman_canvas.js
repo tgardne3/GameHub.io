@@ -1,3 +1,5 @@
+export { draw_gallows, draw_body, draw_head, draw_left_arm, draw_left_leg, draw_right_arm, draw_right_leg, clear_canvas }
+
 // Get canvas drawing tool
 const canvas = document.getElementById("hangman_canvas");
 const ctx = canvas.getContext("2d");

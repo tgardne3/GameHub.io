@@ -535,6 +535,11 @@ table, th, td{
     font-size: 24px;
 }
 
+.hangman_score {
+    color: white;
+    font-size: 24px;
+}
+
 /* Snake */
 .snake_score {
     text-align: center;

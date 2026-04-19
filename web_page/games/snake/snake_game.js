@@ -80,9 +80,16 @@ function grow_snake(direction) {
     snake.unshift(new_head);
     snake_set.add(new_set_key);
 
-    fruit = spawn_fruit(snake_set); // spawn new fruit
-
     score++;
+
+    if (score === 100) {
+        end_game = true;
+        fruit = null;
+        update_score_display();
+        return;
+    }
+
+    fruit = spawn_fruit(snake_set); // spawn new fruit
     update_score_display();
 }
 

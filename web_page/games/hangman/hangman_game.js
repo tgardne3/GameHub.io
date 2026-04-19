@@ -1,8 +1,11 @@
+import { draw_gallows, draw_body, draw_head, draw_left_arm, draw_left_leg, draw_right_arm, draw_right_leg, clear_canvas } from "./hangman_canvas.js"
+
 // Decalre Variables
 let word;
 let lives;
 let guessed_letters;
 let display;
+let score = 0;
 
 // List of possible words
 let words = [
@@ -121,12 +124,24 @@ let words = [
   "yes","yet","you","young","your","yourself"
 ];
 
+// Reset Button
+document.getElementById("resetButton").addEventListener("click", reset_game);
+
 // Event listener to  take in keyboard input, and assign value to guess
 function handleKeyPress(e) {
     const guess = e.key.toLowerCase();
+
+    if (guess.length !== 1) { return; }
+
     if (guess >= 'a' && guess <= 'z') {     // input validation for letters only
         new_guess(guess);
     }
+}
+
+// function to update the score display
+function update_score_display() {
+    const score_element = document.getElementById("hangman_score");
+    score_element.textContent = score;
 }
 
 // Function to process a new guess
@@ -145,11 +160,12 @@ function new_guess(letter) {
         display_hangman(lives);
     }
     if (lives === 0) {  // Game over, you lose
-        alert("Game Over!\nThe word was: " + word);
+        alert("Game Over!\nThe word was: " + word + "\nYour score is: " + score);
         document.removeEventListener("keydown", handleKeyPress);
-    } else if (!display.includes("_")) {   // Game over, you win
-        alert("You Win!\n You guessed the word: " + word);
-        document.removeEventListener("keydown", handleKeyPress);
+    } else if (!display.includes("_")) {   // Correctly guessed word
+        score++;
+        update_score_display();
+        run_hangman();
     } else {   // go to next guess
         guessed_letters.push(letter);
         update_display();
@@ -192,6 +208,7 @@ function update_display() {
         "Guessed: " + guessed_letters.join(", ");
 }
 
+
 function run_hangman() {
 
     //clearing previous game ran
@@ -204,7 +221,20 @@ function run_hangman() {
     guessed_letters = [];   // empty list to keep track of guessed letters
     display = Array(word.length).fill("_"); // display the current state of selected word
     update_display();
+    update_score_display();
     display_hangman(lives);
 
+    document.removeEventListener("keydown", handleKeyPress);
     document.addEventListener("keydown", handleKeyPress);
+}
+
+// function to reset the game
+function reset_game() {
+    score = 0;
+    update_score_display();
+
+    const btn = document.getElementById("resetButton");
+    btn.textContent = "Reset";
+
+    run_hangman();
 }
