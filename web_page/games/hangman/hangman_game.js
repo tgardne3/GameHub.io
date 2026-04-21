@@ -1,4 +1,5 @@
 import { draw_gallows, draw_body, draw_head, draw_left_arm, draw_left_leg, draw_right_arm, draw_right_leg, clear_canvas } from "./hangman_canvas.js"
+import { saveScore } from "../../scripts/leaderboard.js";
 
 // Decalre Variables
 let word;
@@ -162,6 +163,8 @@ function new_guess(letter) {
     if (lives === 0) {  // Game over, you lose
         alert("Game Over!\nThe word was: " + word + "\nYour score is: " + score);
         document.removeEventListener("keydown", handleKeyPress);
+
+        saveScore("hangman", score);
     } else if (!display.includes("_")) {   // Correctly guessed word
         score++;
         update_score_display();
