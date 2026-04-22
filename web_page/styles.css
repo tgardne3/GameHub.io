@@ -281,6 +281,13 @@ table, th, td{
     margin-top: 100px;
     margin-left: 35px;
 }
+.about h3 {
+    font-family: 'Gravitas One', serif;
+    font-weight: 250;
+    color: #FFED29;
+    margin-top: 20px;
+    margin-left: 35px;
+}
 
 /*USER SETTINGS*/
 
