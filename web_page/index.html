@@ -56,6 +56,43 @@ class: CS3300
                     </table>
                 </a>
             </div>
+            <script type="module"> 
+                import { getLeaderboard } from "./scripts/leaderboard.js";
+
+                const GAMES = [
+                    { key: "hangman", bodyId: "hangman-body", label: "Win Streak" },
+                    { key: "snake", bodyId: "snake-body", label: "Points" },
+                    { key: "typesprint", bodyId: "typesprint-body", label: "WPM"}
+                    //{ key: "lightracer", bodyId: "lightracer-body", label: "score"},
+                    //{ key: "online",  bodyId: "online-body", label: "score"},
+                    //{ key: "landmine", bodyId: "landmine-body", label: "score"}
+                    // we can continue to add more games as they continue to get completed
+                ];
+
+                async function renderLeaderboards() {
+                    // Real games
+                    const tbody = document.getElementById("leaderboard-body");
+                    for (const game of GAMES) {
+                       const entries = await getLeaderboard(game.key);
+                        if (entries.length === 0) {
+                            const row = document.createElement("tr");
+                            row.innerHTML = `<td colspan="3">N/A</td>`;
+                            tbody.appendChild(row);
+                            continue;
+                        }
+
+                        entries.slice(0, 1).forEach(entry => {
+                            const row = document.createElement("tr");
+                            row.innerHTML = `
+                                <td>${game.key}</td>
+                                <td>${entry.score}</td>
+                                <td>${entry.username}</td>
+                            `;
+                            tbody.appendChild(row);
+                        });
+                    }
+                } renderLeaderboards();
+        </script>
         </div>
         <!--Center Section-->
         <div class="center-header">
