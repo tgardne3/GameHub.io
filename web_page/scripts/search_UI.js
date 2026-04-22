@@ -7,9 +7,7 @@ let website_objects = [
     {"id": "game", "title" : "Hangman", "path" : "./games/hangman/hangman.html", "image_path" : "hangman.png"},
     {"id": "game", "title" : "Snake Game", "path" : "./games/snake/snake.html", "image_path" : "snake.png"},
     {"id": "game", "title" : "Type Sprint", "path" : "./games/type_sprint/type_sprint.html", "image_path" : "typesprint.png"},
-    {"id": "game", "title" : "Light Racer", "path" : "./games/test_game/test_game.html", "image_path" : "tron.png"},
     {"id": "game", "title" : "Path To Paradise", "path" : "./games/path_to_paradise/path_to_paradise.html", "image_path" : "path_to_paradise.png"},
-    {"id": "game", "title" : "Land Mind", "path" : "./games/test_game/test_game.html", "image_path" : "land_mine.png"},
     {"id": "navigation", "title": "leaderboard", "path" : "./htmls/leaderboard.html", "image_path" : ""},
     {"id": "navigation", "title": "settings", "path" : "./htmls/account.html", "image_path" : ""},
 ];
