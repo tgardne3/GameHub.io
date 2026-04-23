@@ -84,7 +84,7 @@ async function sign_up() {
 //signing in verification
 async function sign_in() {
     //pull values
-    username = document.getElementById('username').value;
+    const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
 
