@@ -1,0 +1,44 @@
+# Details
+
+Date : 2026-04-23 11:16:53
+
+Directory /Users/treygardner/dev/School/GameHub.io
+
+Total : 29 files,  2450 codes, 386 comments, 530 blanks, all 3366 lines
+
+[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
+
+## Files
+| filename | language | code | comment | blank | total |
+| :--- | :--- | ---: | ---: | ---: | ---: |
+| [README.md](/README.md) | Markdown | 2 | 0 | 1 | 3 |
+| [package-lock.json](/package-lock.json) | JSON | 22 | 0 | 1 | 23 |
+| [package.json](/package.json) | JSON | 5 | 0 | 1 | 6 |
+| [web\_page/app.js](/web_page/app.js) | JavaScript | 234 | 42 | 41 | 317 |
+| [web\_page/games/hangman/hangman.html](/web_page/games/hangman/hangman.html) | HTML | 34 | 7 | 6 | 47 |
+| [web\_page/games/hangman/hangman\_canvas.js](/web_page/games/hangman/hangman_canvas.js) | JavaScript | 61 | 12 | 15 | 88 |
+| [web\_page/games/hangman/hangman\_game.js](/web_page/games/hangman/hangman_game.js) | JavaScript | 212 | 11 | 21 | 244 |
+| [web\_page/games/path\_to\_paradise/path\_to\_paradise.html](/web_page/games/path_to_paradise/path_to_paradise.html) | HTML | 32 | 7 | 6 | 45 |
+| [web\_page/games/path\_to\_paradise/path\_to\_paradise.js](/web_page/games/path_to_paradise/path_to_paradise.js) | JavaScript | 81 | 13 | 19 | 113 |
+| [web\_page/games/path\_to\_paradise/story.json](/web_page/games/path_to_paradise/story.json) | JSON | 46 | 0 | 14 | 60 |
+| [web\_page/games/snake/snake.html](/web_page/games/snake/snake.html) | HTML | 35 | 9 | 5 | 49 |
+| [web\_page/games/snake/snake\_canvas.js](/web_page/games/snake/snake_canvas.js) | JavaScript | 145 | 17 | 40 | 202 |
+| [web\_page/games/snake/snake\_game.js](/web_page/games/snake/snake_game.js) | JavaScript | 115 | 12 | 32 | 159 |
+| [web\_page/games/snake/snake\_render.js](/web_page/games/snake/snake_render.js) | JavaScript | 74 | 15 | 24 | 113 |
+| [web\_page/games/test\_game/test\_game.html](/web_page/games/test_game/test_game.html) | HTML | 21 | 6 | 2 | 29 |
+| [web\_page/games/type\_sprint/type\_sprint.html](/web_page/games/type_sprint/type_sprint.html) | HTML | 25 | 7 | 2 | 34 |
+| [web\_page/games/type\_sprint/type\_sprint.js](/web_page/games/type_sprint/type_sprint.js) | JavaScript | 237 | 19 | 26 | 282 |
+| [web\_page/htmls/account.html](/web_page/htmls/account.html) | HTML | 29 | 12 | 18 | 59 |
+| [web\_page/htmls/documentation.html](/web_page/htmls/documentation.html) | HTML | 75 | 13 | 39 | 127 |
+| [web\_page/htmls/leaderboard.html](/web_page/htmls/leaderboard.html) | HTML | 119 | 57 | 22 | 198 |
+| [web\_page/htmls/sign-in.html](/web_page/htmls/sign-in.html) | HTML | 30 | 13 | 15 | 58 |
+| [web\_page/htmls/sign-up.html](/web_page/htmls/sign-up.html) | HTML | 33 | 15 | 13 | 61 |
+| [web\_page/htmls/successful-sign-up.html](/web_page/htmls/successful-sign-up.html) | HTML | 21 | 9 | 8 | 38 |
+| [web\_page/index.html](/web_page/index.html) | HTML | 110 | 20 | 20 | 150 |
+| [web\_page/scripts/auto\_redirections.js](/web_page/scripts/auto_redirections.js) | JavaScript | 5 | 4 | 6 | 15 |
+| [web\_page/scripts/documentation.js](/web_page/scripts/documentation.js) | JavaScript | 5 | 7 | 3 | 15 |
+| [web\_page/scripts/leaderboard.js](/web_page/scripts/leaderboard.js) | JavaScript | 77 | 8 | 24 | 109 |
+| [web\_page/scripts/search\_UI.js](/web_page/scripts/search_UI.js) | JavaScript | 90 | 21 | 29 | 140 |
+| [web\_page/styles.css](/web_page/styles.css) | PostCSS | 475 | 30 | 77 | 582 |
+
+[Summary](results.md) / Details / [Diff Summary](diff.md) / [Diff Details](diff-details.md)
