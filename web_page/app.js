@@ -220,23 +220,12 @@ function display_logged_in_UI(user) {
                 <td> N/A </td>
               </tr> 
               <tr>
-                <td>LightRacer</td>
+                <td>Path To Paradise</td>
                 <td> N/A </td>
                 <td> N/A </td>
                 <td> N/A </td>
               </tr> 
-              <tr>
-                <td>...Online...</td>
-                <td> N/A </td>
-                <td> N/A </td>
-                <td> N/A </td>
-              </tr>
-              <tr>
-                <td>LandMind</td>
-                <td> N/A </td>
-                <td> N/A </td>
-                <td> N/A </td>
-              </tr>
+             
             </tbody>
           </table>
         </div>
