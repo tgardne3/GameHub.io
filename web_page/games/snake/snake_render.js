@@ -1,3 +1,7 @@
+
+// Copyright (c) 2026 [Your Name or Team]
+// Licensed under the MIT License. See LICENSE file in the project root.
+
 import { reset_game, is_game_over, move_snake, grow_snake, next_head, fruit, snake, score } from "./snake_game.js";
 import { draw_game } from "./snake_canvas.js";
 import { saveScore } from "../../scripts/leaderboard.js";

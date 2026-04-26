@@ -1,3 +1,8 @@
+
+// Copyright (c) 2026 [Your Name or Team]
+// Licensed under the MIT License. See LICENSE file in the project root.
+
+
 import { set_current_direction } from "./snake_render.js";
 import { saveScore } from "../../scripts/leaderboard.js"; 
 export { reset_game, is_game_over, move_snake, grow_snake, next_head, fruit, snake, score }; // add export to import it into reder file to get around issue

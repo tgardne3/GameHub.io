@@ -3,6 +3,9 @@ names: Azam, Brandon, David, Trey
 class: CS3300
 */
 
+// Copyright (c) 2026 [Your Name or Team]
+// Licensed under the MIT License. See LICENSE file in the project root.
+
 //import from firebase-app
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 

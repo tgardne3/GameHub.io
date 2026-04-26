@@ -1,8 +1,11 @@
 //name: Azam, Brandon, David, Trey
 //class: CS3300
 
-//game searching script
 
+// Copyright (c) 2026 [Your Name or Team]
+// Licensed under the MIT License. See LICENSE file in the project root.
+
+//game searching script
 let website_objects = [
     {"id": "game", "title" : "Hangman", "path" : "./games/hangman/hangman.html", "image_path" : "hangman.png"},
     {"id": "game", "title" : "Snake Game", "path" : "./games/snake/snake.html", "image_path" : "snake.png"},

@@ -1,3 +1,6 @@
+// Copyright (c) 2026 [Your Name or Team]
+// Licensed under the MIT License. See LICENSE file in the project root.
+
 export { draw_gallows, draw_body, draw_head, draw_left_arm, draw_left_leg, draw_right_arm, draw_right_leg, clear_canvas }
 
 // Get canvas drawing tool

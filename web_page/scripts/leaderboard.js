@@ -1,6 +1,9 @@
 // //name: Azam, Brandon, David, Trey
 // //class: CS3300
 
+// Copyright (c) 2026 [Your Name or Team]
+// Licensed under the MIT License. See LICENSE file in the project root.
+
 import {getFirestore, collection, addDoc, getDocs, query, orderBy, limit, where, doc, getDoc, setDoc, serverTimestamp} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
    
   import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
