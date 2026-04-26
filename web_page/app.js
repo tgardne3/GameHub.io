@@ -7,7 +7,7 @@ class: CS3300
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 
 //import from firebase-auth
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateEmail } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"; 
 
 //import from firebase-analytics
@@ -174,13 +174,13 @@ function display_logged_in_UI(user) {
 
           <!--These inputs should change the actual account info for the -->
           <h2> Username: </h2>
-          <input placeholder="${username}"/>
+          <input id="email" placeholder="${username}"/>
 
           <h2> Password: </h2>
-          <input placeholder="************"/>
+          <input id="password" placeholder="************"/>
 
           <h2> Display Name: </h2>
-          <input placeholder="${username}"/>
+          <input id="username" placeholder="${username}"/>
 
           <button style="margin-top: 1em" type="button" id="save-changes">Save Changes</button>
  
@@ -292,14 +292,40 @@ function display_logged_out_UI() {
 
 }
 
+function save_changes(new_email, new_password) {
+  //updating email & password
+  try {
+    updateEmail(user, new_email);
+    updatePassword(user, new_password);
+    Swal.fire({
+        theme: 'dark',
+        title: `Login Info Successfully Changed!`,
+        text: `your info has been successfully changed, any info left blank in the form will stay the same.`,
+        icon: 'success',
+        confirmButtonText: 'Return',
+        confirmButtonColor: '#FFED29'
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 //######### EVENT LISTENERS ################
 
 // create button objects
 const sign_up_button = document.getElementById('sign-up-button');
 const sign_in_button = document.getElementById('sign-in-button');
 const sign_out_button = document.getElementById('sign-out-button');
+const save_changes_button = document.getElementById('save-changes');
 
 //check if exists on page before creating listener
 if(sign_in_button) sign_in_button.addEventListener('click', sign_in);
 if(sign_up_button) sign_up_button.addEventListener('click', sign_up);
 if(sign_out_button) sign_out_button.addEventListener('click', sign_out);
+if(save_changes_button) save_changes.addEventListener('click', () => {
+    let input_email = document.getElementById('email').value;
+    let input_password = document.getElementById('password').value;
+    new_email = input_email.length > 0 ? `${input_email}@gamehub.io` : user.email;
+    new_password = input_password.length > 0 ? `${input_password}@gamehub.io` : user.password;
+    save_changes(new_email, new_password);
+});
