@@ -1,6 +1,8 @@
 /*
 names: Azam, Brandon, David, Trey
 class: CS330
+// Copyright (c) 2026 [Your Name or Team]
+// Licensed under the MIT License. See LICENSE file in the project root.
 */
 
 let words = [

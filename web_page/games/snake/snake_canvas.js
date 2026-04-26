@@ -1,3 +1,6 @@
+// Copyright (c) 2026 [Your Name or Team]
+// Licensed under the MIT License. See LICENSE file in the project root.
+
 // initalize canvas
 const canvas = document.getElementById("snake_canvas");
 const ctx = canvas.getContext("2d");

@@ -1,3 +1,7 @@
+// Copyright (c) 2026 [Your Name or Team]
+// Licensed under the MIT License. See LICENSE file in the project root.
+
+
 // Get canvas drawing tool
 const canvas = document.getElementById("hangman_canvas");
 const ctx = canvas.getContext("2d");
