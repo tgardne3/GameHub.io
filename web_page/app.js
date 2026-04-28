@@ -104,19 +104,19 @@ async function sign_in() {
     } catch (error) {
       switch (error.code) {
         case 'auth/user-not-found':
-          console.log('No account found with that email.');
+          alert('No account found with that email.');
           break;
         case 'auth/wrong-password':
-          console.log('Incorrect password.');
+          alert('Incorrect password.');
           break;
         case 'auth/invalid-credential':
-          console.log('Invalid email or password.');
+          alert('Invalid email or password.');
           break;
         case 'auth/too-many-requests':
-          console.log('Account temporarily locked due to too many failed attempts.');
+          alert('Account temporarily locked due to too many failed attempts.');
           break;
         default:
-          console.log('Something went wrong:', error.message);
+          alert('Something went wrong:', error.message);
       }
     }
 }
