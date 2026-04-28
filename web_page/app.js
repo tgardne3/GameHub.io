@@ -134,15 +134,6 @@ function display_logged_in_UI(user) {
   //getting username value:
   const username = user.email.slice(0, -11);
 
-  //when display_name is implemented in database
-  /*
-  if(user.DisplayName) {
-    const display_name = user.DisplayName;
-  }
-  else {
-    const display_name = username; 
-  }
-  */
 
   //############## PAGE NAVIGATION ##################### 
   const nav = document.querySelector('nav');
